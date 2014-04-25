@@ -343,6 +343,23 @@ def SetupServer():
     h.start()
     return True
 
+def getIsMasterFlag():
+    global isMaster
+    masterFlag_lock.acquire()
+    isMasterSnapshot = isMaster
+    masterFlag_lock.release()
+
+    return isMasterSnapshot
+
+def getMasterAddress():
+    global masterIP
+    global port
+    elec_lock.acquire()
+    masterIPSnapshort = masterIP
+    portSnapshort = port
+    elec_lock.release()
+    return (masterIPSnapshort, portSnapshort)
+
 if __name__ == '__main__':
     SetupServer()
     time.sleep(10)
