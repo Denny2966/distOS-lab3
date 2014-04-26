@@ -133,42 +133,7 @@ class ClientObject:
         return result
 
     def get_score(self, client_id, event_type = 'Curling' ):
-#        global pid
-#        global c_time
-#
-#        print 'c_time heap_lock released'
-#        heap_lock.acquire()
-#        c_time_snapshot = c_time
-#        c_time += 1
-#        heap_lock.release()
-#        print 'c_time heap_lock released'
-#        req_type = 'score'
-#        req_para = event_type
-#
-#        for s in s_list:
-#            try:
-#                s.record_request((req_type, req_para,), (c_time_snapshot+1, pid, client_id))
-#            except Exception as e:
-#                print e
-#                time.sleep(0.1)
-#                try:
-#                    s.record_request((req_type, req_para,), (c_time_snapshot+1, pid, client_id))
-#                except:
-#                    pass
         result = self.__find_in_cache('Score-'+event_type)
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print result
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
         if result == None:
             result = backend_s.getScore(event_type)
             self.__update_cache('Score-'+event_type, result)
@@ -191,6 +156,13 @@ class ClientObject:
     def incrementMedalTally(self, teamName, medalType):
         global s_list
         if ts.getIsMasterFlag() and cache_mode == 1:
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
             for s in s_list:
                 try:
                     s.invalidate_cache('Medal-'+teamName)

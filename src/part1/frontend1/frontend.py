@@ -156,6 +156,13 @@ class ClientObject:
     def incrementMedalTally(self, teamName, medalType):
         global s_list
         if ts.getIsMasterFlag() and cache_mode == 1:
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
             for s in s_list:
                 try:
                     s.invalidate_cache('Medal-'+teamName)
@@ -170,12 +177,6 @@ class ClientObject:
         return result
 
     def setScore(self, eventType, score): # score is a list (score_of_Gauls, score_of_Romans, flag_whether_the_event_is_over)
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
         print self.time_ip, self.time_port
         print ts.getOffset()
         epoch_time = self.time_proxy.getOffset()
