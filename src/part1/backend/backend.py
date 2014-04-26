@@ -137,8 +137,8 @@ class RequestObject:
                 x = t_file_data[team_name_index] 
                 y = x.index('[')
                 x_val = eval(x[y:])
-                x_val[medal_type_dict[medalType]] += 1
-                t_file_data[team_name_index] = str(team_name) + ': ' + str(x_val) + '\n'
+                x_val[medal_type_index] += 1
+                t_file_data[team_name_index] = str(teamName) + ': ' + str(x_val) + '\n'
                 t_file.seek(0)
                 t_file.writelines(t_file_data)
 
@@ -192,7 +192,7 @@ class RequestObject:
             # this part is added for testing the performance gain of cache over pure disk I/O #write obtained scores into the output file
             with open(s_file_name, 'r+') as s_file :
                 s_file_data = s_file.readlines()
-                s_file_data[event_type_index] = str(event_type) + ': ' + str(result)  + '\n'
+                s_file_data[event_type_index] = str(eventType) + ': ' + str(score)  + '\n'
                 s_file.seek(0)
                 s_file.writelines(s_file_data)
 
