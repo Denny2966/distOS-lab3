@@ -1,0 +1,13 @@
+**Part 1:
+Cache mode is assigned by the backend server. You can configure it in server_config.py under part1/backend/. Specifically, server_mode = -1 means no cache is used.
+You must run all servers (including backend and the two frontends) before starting bard and client process, since I have not implemented fault tolerance yet. Specifically, you have to wait about 5 seconds after the two frontends server start, to make sure the whole system runs ok. I will fix this in the next version.
+
+**Part 2:
+Under work
+
+Armand:
+    Could you have test the part1 according to the lab requirement and start on the document? If you meet any problem, please contact me. I will start on Part 2.
+    By the way, could you help make sure lab3 could be extended for one week without penalty? I did not catch the words professor Shenoy said when I asked him about the extension. I think if the extension is allowed, we could consider to implement the extra part.
+
+Best Regards,
+Denny
