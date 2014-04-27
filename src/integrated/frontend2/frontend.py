@@ -36,7 +36,6 @@ aux_ack_dict = {}
 
 process_num = 0
 
-port_diff = cf.port_diff
 heap_lock = threading.Lock()
 dict_lock = threading.Lock()
 
@@ -56,6 +55,10 @@ global client_object
 global cache_mode # the system-wide cache_mode is retrieved from the backend server at the start of the frontend server
 global client_dict
 global client_dict_lock
+
+global client_old_dict # not used in current implementation
+global client_old_dict_lock # not used in current implementation
+
 global cache_dict
 global cache_dict_lock
 
@@ -63,9 +66,12 @@ global pull_period
 global backend_s
 
 global s_list
+global URL_list
 
-client_dict = {}
-client_dict_lock = threading.Lock()
+global pre_fe_status
+
+client_old_dict = {}
+client_old_dict_lock = threading.Lock()
 cache_dict = {} # Cache key is RequestType-RequestContent (RequestType is 'Medal'/'Score'. For RequestType is 'Medal', RequestContent is 'Gauls'/'Romans', while for RequestType is 'Score', RequestContent is 'Curling'/'Skating'/'Skiing'. Thus the number of cache items is at most 5. It is easy to cache all of them, thus no replacement scheme is necessary. Nevertheless, you can maintain a priority queue besides the cache_dict (used both at the same time such both read and remove/add are efficient) to implement the LRU replacement scheme when the scale becomes much larger)
 cache_dict_lock = threading.Lock()
 pull_period = cf.pull_period
@@ -116,13 +122,13 @@ def get_event_type_index(eventType):
 		event_type_index = event_type_dict[eventType]
 	return event_type_index
 
-class ClientObject:
+class RPCObject:
     def __init__(self):
         self.time_ip = tcf.cluster_info[str(tcf.process_id)][0]
         self.time_port = tcf.cluster_info[str(tcf.process_id)][1]
         self.time_proxy = xmlrpclib.ServerProxy("http://" + self.time_ip + ":" + str(self.time_port))
 
-    def get_medal_tally(self, client_id, team_name = 'Gauls'):
+    def get_medal_tally(self, client_id, client_addr, team_name = 'Gauls'):
         global pid
         global c_time
 
@@ -132,43 +138,8 @@ class ClientObject:
             self.__update_cache('Medal-'+team_name, result)
         return result
 
-    def get_score(self, client_id, event_type = 'Curling' ):
-#        global pid
-#        global c_time
-#
-#        print 'c_time heap_lock released'
-#        heap_lock.acquire()
-#        c_time_snapshot = c_time
-#        c_time += 1
-#        heap_lock.release()
-#        print 'c_time heap_lock released'
-#        req_type = 'score'
-#        req_para = event_type
-#
-#        for s in s_list:
-#            try:
-#                s.record_request((req_type, req_para,), (c_time_snapshot+1, pid, client_id))
-#            except Exception as e:
-#                print e
-#                time.sleep(0.1)
-#                try:
-#                    s.record_request((req_type, req_para,), (c_time_snapshot+1, pid, client_id))
-#                except:
-#                    pass
+    def get_score(self, client_id, client_addr, event_type = 'Curling' ):
         result = self.__find_in_cache('Score-'+event_type)
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print result
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
-        print '%%%%%%%%%%%%%%%%'
         if result == None:
             result = backend_s.getScore(event_type)
             self.__update_cache('Score-'+event_type, result)
@@ -181,16 +152,46 @@ class ClientObject:
         if master_flag == True:
             return 'OK'
         else:
-            (master_ip, master_port) = ts.getMasterAddress()
+            election_master_address, master_address = ts.getMasterAddress()
+            master_ip, master_port = master_address
             if master_ip == '' or master_port == -1:
                 result = ''
             else:
-                result =  master_ip + ':' + str(master_port-port_diff)
+                result =  master_ip + ':' + str(master_port)
             return result
     
+    def registerClient(self, claimed_fe_address, client_address):
+        if claimed_fe_address != myipAddress + ':' + str(myport):
+            client_dict_lock.acquire()
+            if claimed_fe_address not in client_dict:
+                client_dict[claimed_fe_address] = set()
+            client_dict[claimed_fe_address].add(client_address)
+            client_dict_lock.release()
+        return True
+
+    def deregisterClient(self, claimed_fe_address, client_address):
+        if claimed_fe_address != myipAddress + ':' + str(myport):
+            client_dict_lock.acquire()
+            if claimed_fe_address in client_dict and client_address in client_dict[claimed_fe_address]:
+                client_dict[claimed_fe_address].remove(client_address)
+                if len(client_dict[claimed_fe_address]) == 0:
+                    del client_dict[claimed_fe_address]
+            client_dict_lock.release()
+        return True
+
     def incrementMedalTally(self, teamName, medalType):
         global s_list
+        if not ts.getIsMasterFlag():
+            result = backend_s.incrementMedalTally(teamName, medalType)
+            return 'NO'
         if ts.getIsMasterFlag() and cache_mode == 1:
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
+            print 'increase medal tally invalidation'
             for s in s_list:
                 try:
                     s.invalidate_cache('Medal-'+teamName)
@@ -205,12 +206,9 @@ class ClientObject:
         return result
 
     def setScore(self, eventType, score): # score is a list (score_of_Gauls, score_of_Romans, flag_whether_the_event_is_over)
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
+        if not ts.getIsMasterFlag():
+            result = backend_s.setScore(eventType, score)
+            return 'NO'
         print self.time_ip, self.time_port
         print ts.getOffset()
         epoch_time = self.time_proxy.getOffset()
@@ -273,10 +271,10 @@ class ClientObject:
         cache_dict[cache_key] = value        
         cache_dict_lock.release()
 
-    def claim_client(client_uniq_id):
-        client_dict_lock.acquire()
-        client_dict[client_uniq_id] = True
-        client_dict_lock.release()
+    def claim_client(client_uniq_id): # the function is not used in the final implementation, because we determine not let backend server know the status of clients
+        client_old_dict_lock.acquire()
+        client_old_dict[client_uniq_id] = True
+        client_old_dict_lock.release()
 
         return backend_s.claim_client((client_uniq_id, True,))
 
@@ -455,6 +453,15 @@ def invalidate_cache(cache_key):
     cache_dict_lock.release()
     return True
 
+def invalidate_whole_cache():
+    if cache_mode == -1:
+        return False
+    cache_dict_lock.acquire()
+    for cache_key in cache_dict:
+        del cache_dict[cache_key]
+    cache_dict_lock.release()
+    return True
+
 class ServerThread(threading.Thread):
     """a RPC server listening to push request from the server of the whole system"""
     def __init__(self, port):
@@ -462,14 +469,41 @@ class ServerThread(threading.Thread):
         self.port = port
 
         self.localServer = AsyncXMLRPCServer(('', port), SimpleXMLRPCRequestHandler) #SimpleXMLRPCServer(('', port))
-        self.localServer.register_instance(ClientObject())
+        self.localServer.register_instance(RPCObject())
 
         self.localServer.register_function(record_request, 'record_request')
         self.localServer.register_function(check_alive, 'check_alive')
         self.localServer.register_function(send_ack, 'send_ack')
         self.localServer.register_function(invalidate_cache, 'invalidate_cache')
+        self.localServer.register_function(invalidate_whole_cache, 'invalidate_whole_cache')
     def run(self):
         self.localServer.serve_forever()
+
+class FeScanThread(threading.Thread):
+    """Background thread: checking whether a fe is recovered from disconnected, and in that case, notify the corresponding clients"""
+    def __init__(self, scan_interval):
+        self.scan_interval = scan_interval
+    def run(self):
+        global pre_fe_status
+        while True:
+            sys.sleep(self.scan_interval)
+            for i in range(len(s_list)):
+                try:
+                    s_list[i].check_alive()
+                    if not pre_fe_status[i]:
+                        client_dict_lock.acquire()
+                        if URL_list[i] in client_dict:
+                            for client in client_dict[URL_list[i]]:
+                                proxy_tmp = xmlrpclib.ServerProxy('http://'+client)
+                                try:
+                                    proxy_tmp.change_back_proxy()
+                                except:
+                                    pass
+                        client_dict_lock.release()
+
+                    pre_fe_status[i] = True
+                except Exception as e:
+                    pre_fe_status[i] = False
 
 if __name__ == "__main__":
     try:
@@ -480,8 +514,6 @@ if __name__ == "__main__":
     except Exception as e:
         print e
         sys.exit(1)
-    # set up time server
-    ts.SetupServer() # it is just used for selection
 
     remote_host_name = cf.server_ip
     remote_port = cf.server_port
@@ -508,23 +540,40 @@ if __name__ == "__main__":
         all_processes.append((cluster_info[i][0], cluster_info[i][1], int(i)))
     process_num = len(all_processes)
 
+    pre_fe_status = []
+    URL_list = []
     s_list = []
     for process in all_processes:
         URL = "http://" + process[0] + ":"+ str( process[1] )
         print URL
+        pre_fe_status.append(False)
+        URL_list.append(process[0]+':'+str(process[1]))
         s_list.append(xmlrpclib.ServerProxy(URL))
 
+    # set up time server
+    ts.SetupServer((myipAddress, myport), s_list) # it is just used for selection
+
+    # it is supposed the two frontend servers should both start normally
     while True:
         try:
             for i in range(len(all_processes)):
                 print i
                 s_list[i].check_alive()
+                pre_fe_status[i] = True
+            time.sleep(2)
             break
         except Exception as e:
             print e
             print 'waiting...'   
             time.sleep(2)
             continue
+
+    print 'all frontend servers have started'
+
+    scan_interval = 2
+    fe_thread = FeScanThread(scan_interval)
+    fe_thread.daemon = True
+    fe_thread.start()
 
     if cache_mode == 0:
         pull_thread = PullThread()

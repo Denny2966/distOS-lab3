@@ -15,6 +15,7 @@ import sys
 import socket
 import xmlrpclib
 import server_config as cf
+import numpy as np
 
 sys.path.append(os.getcwd())
 #import timeServer.timeServer as ts
@@ -38,6 +39,12 @@ global medal_type_dict # ['Gold', 'Silver', 'Bronze']
 global event_type_dict # ['Curling', 'Skating', 'Skiing']
 global front_server_dict
 global client_dict
+
+global t_file
+global s_file
+
+global t_file_name
+global s_file_name
 
 class ReaderWriterLocks:
     """Structure to store related locks for realizing the second type reader and writer lock"""
@@ -121,9 +128,19 @@ class RequestObject:
         medal_type_index = self.get_medal_type_index(medalType)
 
         if team_name_index != -1 and medal_type_index != -1:
-            tally_board[medal_type_index][team_name_index] += 1 # increase medal tally number of the medalType
-            tally_num = tally_board[medal_type_index][team_name_index]
+            #tally_board[medal_type_index][team_name_index] += 1 # increase medal tally number of the medalType
+            #tally_num = tally_board[medal_type_index][team_name_index]
 
+            # write obtained medal tally into the output file
+            with open(t_file_name, 'r+') as t_file :
+                t_file_data = t_file.readlines()
+                x = t_file_data[team_name_index] 
+                y = x.index('[')
+                x_val = eval(x[y:])
+                x_val[medal_type_index] += 1
+                t_file_data[team_name_index] = str(teamName) + ': ' + str(x_val) + '\n'
+                t_file.seek(0)
+                t_file.writelines(t_file_data)
 
         # unlock
         self.post_write(self.tb_lock)
@@ -138,9 +155,17 @@ class RequestObject:
         team_name_index = self.get_team_name_index(teamName)
 
         if team_name_index != -1:
-            gold_num = tally_board[0][team_name_index]
-            silver_num = tally_board[1][team_name_index]
-            bronze_num = tally_board[2][team_name_index]
+            #gold_num = tally_board[0][team_name_index]
+            #silver_num = tally_board[1][team_name_index]
+            #bronze_num = tally_board[2][team_name_index]
+            with open(t_file_name, 'r+') as t_file :
+                t_file_data = t_file.readlines()
+                x = t_file_data[team_name_index] 
+                y = x.index('[')
+                result = eval(x[y:])
+                gold_num = result[0]
+                silver_num = result[1]
+                bronze_num = result[2]
         else: # the teamName is invalid
             gold_num = -1
             silver_num = -1
@@ -151,7 +176,6 @@ class RequestObject:
 
         return [gold_num, silver_num, bronze_num]
 
-
     def setScore(self, eventType, score): # score is a list (score_of_Gauls, score_of_Romans, flag_whether_the_event_is_over)
         """set score"""
         # lock
@@ -161,13 +185,19 @@ class RequestObject:
         event_type_index = self.get_event_type_index(eventType)
 
         if event_type_index != -1:
-            score_board[event_type_index] = score
+            #score_board[event_type_index] = score
             # push to the clients
             client_set = push_registered_map[event_type_index]
 
+            # this part is added for testing the performance gain of cache over pure disk I/O #write obtained scores into the output file
+            with open(s_file_name, 'r+') as s_file :
+                s_file_data = s_file.readlines()
+                s_file_data[event_type_index] = str(eventType) + ': ' + str(score)  + '\n'
+                s_file.seek(0)
+                s_file.writelines(s_file_data)
+
             for clientID in client_set :
                 self.__pushUpdate(clientID, eventType, score)
-
 
         # unlock
         self.post_write(self.sb_lock)
@@ -182,7 +212,13 @@ class RequestObject:
         event_type_index = self.get_event_type_index(eventType)
 
         if event_type_index != -1:
-            score = score_board[event_type_index]
+            #score = score_board[event_type_index]
+            # this part is added for testing the performance gain of cache over pure disk I/O #write obtained scores into the output file
+            with open(s_file_name, 'r+') as s_file :
+                s_file_data = s_file.readlines()
+                x = s_file_data[event_type_index]
+                y = x.index('[')
+                score = eval(x[y:])
         else:
             score = dummy_score_for_an_event; 
 
@@ -252,7 +288,7 @@ class RequestObject:
         global cache_mode
         return cache_mode
 
-    def claim_client(self, client_pair): # a two elements tuple ('client_ip:client_id', claim_whether_alive). We should use client_ip:client_id to mark a unique client; claim_whether_alive is a bool
+    def claim_client(self, client_pair): # a two elements tuple ('client_ip:client_port', claim_whether_alive). We should use client_ip:client_id to mark a unique client; claim_whether_alive is a bool
         global client_dict
         global client_dict_lock
 
@@ -276,6 +312,12 @@ class RequestObject:
             return
 
 if __name__ == "__main__":
+    t_file = None
+    s_file = None
+
+    t_file_name = './log/tally_board.out'
+    s_file_name = './log/score_board.out'
+
     tally_board = [[0 for x in xrange(2)] for x in xrange(3)]
     score_board = [[0 for x in xrange(4)] for x in xrange(3)] # last element for each x is the timestamp
     front_server_dict = {}
@@ -293,6 +335,27 @@ if __name__ == "__main__":
     cache_mode = cf.cache_mode
     # Instantiate and bind to localhost:8080
     server = AsyncXMLRPCServer(('', int(cf.server_port)), SimpleXMLRPCRequestHandler)
+
+    try :
+        # initialize output files
+        s_file = open(s_file_name, 'w')
+        s_file.writelines([var[0] + ': ' + str(list(score_board[var[1]]))+'\n' for var in sorted(event_type_dict.iteritems(), key=lambda d:d[1], reverse=False)]) 
+        s_file.close()
+
+        t_file = open(t_file_name, 'w')
+
+        tally_board_transpose = np.transpose(tally_board)
+
+        t_file.writelines([var[0] + ': ' + str(list(tally_board_transpose[var[1]]))+'\n' for var in sorted(team_name_dict.iteritems(), key=lambda d:d[1], reverse = False)]) 
+        t_file.close()
+        # end of initialize output files
+
+    except :
+        info = sys.exc_info()
+        print "Unexpected exception, cannot connect to the server:", info[0],",",info[1]
+        sys.exit(1)
+    else :
+        pass
 
     # Register example object instance
     # tb_lock = threading.Lock();

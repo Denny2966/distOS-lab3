@@ -32,7 +32,7 @@ class Bard():
     """Class that manage updatescore and updateTally. Inherits threading.Thread methods"""
 #    def __init__(self):
 
-    def start(self):
+    def connect_to_master(self):
         """ Connect with the master frontserver"""
         global proxy
         while True:
@@ -52,6 +52,10 @@ class Bard():
             except Exception as e:
                 print 'wzd',e
                 time.sleep(2)
+
+    def start(self):
+        """ Connect with the master frontserver"""
+        self.connect_to_master()
                 
         """ Launches the update function"""
         try :
@@ -80,42 +84,65 @@ class Bard():
             time.sleep(cf.update_show_interval)
             print score
             event_end_prob = cf.event_end_prob
-            if random.random() >= 1 - event_end_prob:
+            if random.random() >= 1 - event_end_prob: # event end
                 event_end_prob += cf.event_end_prob_incr_per_interval
                 should_end = True
 
                 end_event_num += 1
                 end_event_set.add(sport)
                 score[sport] = (score[sport][0], score[sport][1], should_end)
-                proxy.setScore(sport, score[sport])
+                connect_flag = self.set_score(sport, score[sport])
 
                 G_score = score[sport][0]
                 R_score = score[sport][1]
                 if G_score > R_score :
-                    proxy.incrementMedalTally('Gauls', 'Gold')
-                    proxy.incrementMedalTally('Romans', 'Silver')
-                elif G_score == R_score :
-                    proxy.incrementMedalTally('Gauls', 'Silver')
-                    proxy.incrementMedalTally('Romans', 'Gold')
+                    connect_flag = self.incre_medal_tally('Gauls', 'Gold')
+                    connect_flag = self.incre_medal_tally('Romans', 'Silver')
+                elif G_score < R_score :
+                    connect_flag = self.incre_medal_tally('Gauls', 'Silver')
+                    connect_flag = self.incre_medal_tally('Romans', 'Gold')
                 else :
-                    proxy.incrementMedalTally('Gauls', 'Gold')
-                    proxy.incrementMedalTally('Romans', 'Gold')
+                    connect_flag = self.incre_medal_tally('Gauls', 'Gold')
+                    connect_flag = self.incre_medal_tally('Romans', 'Gold')
 
                 if end_event_num == total_event_num :
                     should_end = False
                     break
                 else :
                     should_end = False
+                    if connect_flag == 'NO':
+                        sys.sleep(2)
+                        self.connect_to_master()
                     continue
-            if random.random() >= 1 - cf.score_update_prob:
+            if random.random() >= 1 - cf.score_update_prob: # update score
                 if team == "Gauls":
                     score[sport] = (score[sport][0]+1, score[sport][1], should_end)
-                    proxy.setScore(sport, score[sport])
+                    connect_flag = self.set_score(sport, score[sport])
                 else:
                     score[sport] = (score[sport][0], score[sport][1]+1, should_end)
-                    proxy.setScore(sport, score[sport])
+                    connect_flag = self.set_score(sport, score[sport])
+            if connect_flag == 'NO':
+                sys.sleep(2)
+                self.connect_to_master()
         print score
         return
+
+    def incre_medal_tally(self, team, medal):
+        while True:
+            try:
+                connect_flag = proxy.incrementMedalTally(team, medal)
+                return connect_flag
+            except:
+                sys.sleep(1)
+                self.connect_to_master()
+    def set_score(self, event, score):
+        while True:
+            try:
+                connect_flag = proxy.setScore(event, score)
+                return connect_flag
+            except:
+                sys.sleep(1)
+                self.connect_to_master()
 
 def get_medal_type():
     """Returns a random medal type"""

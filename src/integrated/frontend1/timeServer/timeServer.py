@@ -10,6 +10,9 @@ import timeit
 import SocketServer
 import numpy as np
 
+sys.path.append(os.getcwd()+'/..')
+#import frontend as fe
+
 from SimpleXMLRPCServer import SimpleXMLRPCServer, SimpleXMLRPCRequestHandler
 class AsyncXMLRPCServer(SocketServer.ThreadingMixIn,SimpleXMLRPCServer): pass 
 
@@ -33,6 +36,12 @@ isMaster = False
 timeserver = None
 
 initFlag = False
+
+global outter_server_address
+global outter_server_list
+
+global outter_masterAddr
+
 class TimeServer(threading.Thread):
     offset = 0 
     def run(self):
@@ -185,9 +194,6 @@ class heartbeat(threading.Thread):
                     portSnapshort = port
                     elec_lock.release()
 
-             #       print "+++", masterIPSnapshort
-             #       print "---", portSnapshort
-
                     self.proxy = xmlrpclib.ServerProxy("http://" + masterIPSnapshort + ":"+ str( portSnapshort )) #proxy to master port                    
                     self.proxy.amongstTheLiving()
              #       process_lock.acquire()
@@ -277,12 +283,22 @@ def election():
                 continue
             try:
                 proxy = xmlrpclib.ServerProxy("http://" + process[0] + ":" + str( process[1] ))
-                result = proxy.remoteClaimIWon(myipAddress, myport)
+                result = proxy.remoteClaimIWon(myipAddress, myport, outter_server_address)
             except Exception as e:
                 print e
                 continue
         process_lock.release()
         #elec_lock.release()
+        for s in outter_server_list:
+            try:
+                s.invalidate_whole_cache()
+            except Exception as e:
+                print e
+                time.sleep(0.1)
+                try:
+                    s.invalidate_whole_cache()
+                except:
+                    pass
                 
         return "IWON"
     masterFlag_lock.acquire()
@@ -297,17 +313,22 @@ def amIMaster():
     masterFlag_lock.release()
     return isMasterSnapshot
 
-def remoteClaimIWon(mIP, masterPort):
+def remoteClaimIWon(mIP, masterPort, outter_addr):
     global port
     global isMaster
     global masterIP
+    global outter_masterAddr
 
     elec_lock.acquire()
     masterIP = mIP
     port = masterPort
+
+    outter_masterAddr = outter_addr
     elec_lock.release()
 
     masterFlag_lock.acquire()
+#    print fe.myipAddress
+#    print fe.myport
     print 'I am claimed not master'
     isMaster = False
     masterFlag_lock.release()
@@ -328,7 +349,12 @@ def getOffset():
 def getTime():
     return os.times()[4]
 
-def SetupServer():
+def SetupServer(address, server_list):
+    global outter_server_address
+    global outter_server_list
+
+    outter_server_address = address
+    outter_server_list = server_list
     s = ServerRequestThread()
     s.daemon = True
     try:
@@ -357,8 +383,10 @@ def getMasterAddress():
     elec_lock.acquire()
     masterIPSnapshort = masterIP
     portSnapshort = port
+
+    masterOutterAddrSnapshort = outter_masterAddr
     elec_lock.release()
-    return (masterIPSnapshort, portSnapshort)
+    return ((masterIPSnapshort, portSnapshort), masterOutterAddrSnapshort)
 
 if __name__ == '__main__':
     SetupServer()

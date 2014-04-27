@@ -8,6 +8,5 @@ cluster_info = {
 server_ip = '127.0.0.1'
 server_port = 8000
 pull_period = 1 # unit is second, it works only when pull mode is chosen by the backend server
-port_diff = 95
 
 win_per_num_request = 100

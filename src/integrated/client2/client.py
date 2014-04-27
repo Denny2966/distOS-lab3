@@ -19,8 +19,26 @@ import numpy as np
 import random
 import socket
 import time
+# Threaded mix-in
+class AsyncXMLRPCServer(SocketServer.ThreadingMixIn,SimpleXMLRPCServer): pass 
 
+global assigned_server_index
+global current_index
+global client_addr
+global pid
+global proxy
+global disable_ind_set
+global ind_set
+global ind_set_lock
+global proxy_lock
+global s_list
+global URL_list
+
+assigned_server_index = cf.assigned_server_index
+client_addr = cf.client_addr
 pid = cf.process_id
+ind_set_lock = threading.Lock()
+proxy_lock = threading.Lock()
 
 tally_board = [[0 for x in xrange(2)] for x in xrange(3)]
 score_board = [[0 for x in xrange(4)] for x in xrange(3)]
@@ -66,7 +84,8 @@ def get_rand_value(value_list):
 
 class ClientObject:
     def __init__(self, remote_ips, remote_ports):
-        self.remote_addresses = (remote_ips, remote_ports)
+        global remote_addresses
+        remote_addresses = (remote_ips, remote_ports)
 
     def get_medal_tally(self, s, team_name = 'Gauls'):
         global pid
@@ -102,35 +121,111 @@ class ClientObject:
         return result
 
     def start(self, poisson_lambda, simu_len, get_score_pb):
+        global ind_set
+        global disable_ind_set
+        global s_list
+        global current_index
+        
         t = np.random.rand(poisson_lambda*simu_len) * simu_len
         t.sort()
         t[1:len(t)-1] = t[1:len(t)-1] - t[0:len(t)-2]
 
         s_list = []
-        remote_servers_num = len(self.remote_addresses[0])
+        URL_list = []
+        remote_servers_num = len(remote_addresses[0])
+
+        ind_set = set(range(remote_servers_num))
+        ind_set_lock.acquire()
+        disable_ind_set = set(range(remote_servers_num))
+        ind_set_lock.release()
+
         for i in range(remote_servers_num):
-            URL = "http://" + self.remote_addresses[0][i] + ":" + str(self.remote_addresses[1][i]);
+            URL = "http://" + remote_addresses[0][i] + ":" + str(remote_addresses[1][i]);
+            URL_list.append(URL)
             s_list.append(xmlrpclib.ServerProxy(URL))
 
+        proxy_lock.acquire()
+        current_index = assigned_server_index
+        proxy = xmlrpclib.ServerProxy('http://'+remote_addresses[0][current_index]+':'+str(remote_addresses[1][current_index]))
+        proxy_lock.release()
+
         count = 0
+        break_flag = 0
         for t_val in t:
             count += 1
-            print count
-            s_index = int(np.floor(np.random.rand(1)*remote_servers_num))
-            s = s_list[s_index]
+            #print count
             time.sleep(t_val)
 
             try:
                 if np.random.rand(1) < get_score_pb:
-                    result = self.get_score(s, get_rand_value(event_type_list))
+                    print 'event'
+                    proxy_lock.acquire()
+                    result = self.get_score(proxy, get_rand_value(event_type_list))
+                    print '+++++', result
                 else:
-                    result = self.get_medal_tally(s, get_rand_value(team_name_list))
-            except socket.error, (value,message):
-                print "Could not open socket to the server: " + message
+                    print 'medal'
+                    proxy_lock.acquire()
+                    result = self.get_medal_tally(proxy, get_rand_value(team_name_list))
+                    print '+++++', result
+#            except socket.error, (value,message):
+#                print "Could not open socket to the server: " + message
             except :
                 info = sys.exc_info()
                 print "Unexpected exception, cannot connect to the server:", info[0],",",info[1]
-            print '+++++', result
+                
+                break_flag = self.select_proxy()
+
+                ind_set_lock.acquire()
+                current_index = break_flag
+                ind_set_lock.release()
+
+                proxy = xmlrpclib.ServerProxy('http://'+remote_addresses[0][break_flag]+':'+str(remote_addresses[1][break_flag]))
+                if break_flag != assigned_server_index:
+                    proxy.registerClient(URL_list[assigned_server_index], client_addr[0]+':'+str(client_addr[1]))
+
+            proxy_lock.release()
+            if break_flag == -1:
+                break
+        for s in s_list:
+            try:
+                s.deregisterClient(URL_list[assigned_server_index],client_addr[0]+':'+str(client_addr[1]))
+            except:
+                pass
+
+    def select_proxy(self):
+        count = -1
+        for s in s_list:
+            count += 1
+            try:
+                s.check_alive()
+                return count
+            except:
+                pass
+        return -1
+
+class RPCObject():
+    def change_back_proxy(self):
+        global current_index
+        global proxy
+
+        ind_set_lock.acquire()
+        current_index =  assigned_server_index
+        ind_set_lock.release()
+
+        proxy_lock.acquire()
+        proxy = xmlrpclib.ServerProxy('http://'+remote_addresses[0][assigned_server_index]+':'+str(remote_addresses[1][assigned_server_index]))
+        proxy_lock.release()
+
+        return True
+
+class ServerThread(threading.Thread):
+    """a RPC server listening to push request from the server of the whole system"""
+    def __init__(self, port):
+        threading.Thread.__init__(self)
+        self.port = port
+
+        self.localServer = AsyncXMLRPCServer(('', cf.client_addr[1]), SimpleXMLRPCRequestHandler) #SimpleXMLRPCServer(('', port))
+        self.localServer.register_instance(RPCObject())
 
 if __name__ == "__main__":
     remote_ips = cf.remote_server_ips
@@ -146,4 +241,8 @@ if __name__ == "__main__":
     get_score_pb = cf.get_score_pb
 
     client = ClientObject(remote_ips, remote_ports)
+    server = ServerThread(myport)
+    server.daemon = True; # allow the thread exit right after the main thread exits by keyboard interruption.
+    server.start() # The server is now running
+
     client.start(poisson_lambda, simu_len, get_score_pb)
