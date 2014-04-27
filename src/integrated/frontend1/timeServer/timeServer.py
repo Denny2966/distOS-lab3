@@ -364,6 +364,7 @@ def SetupServer(address, server_list):
         print e
         return False
     time.sleep(5)
+
     h = heartbeat()
     h.daemon = True
     h.start()

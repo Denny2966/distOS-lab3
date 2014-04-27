@@ -1,5 +1,6 @@
-server_ip = '127.0.0.1'
-server_port = '8005'
+remote_server_ips = ('127.0.0.1', '127.0.0.1')
+remote_server_ports = (8005, 8006)
+assigned_server_index = 0 # in real system, client is distributed by a load balancing server in general; here I just simulate the balancing policy.
 
 update_show_interval = 2	# the interval between two shows of scores and/or tallies in the standard output; the unit is second
 score_update_prob = 0.9	# the probability scores update after 'update_show_interval' second

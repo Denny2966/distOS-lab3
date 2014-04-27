@@ -50,8 +50,30 @@ class Bard():
                     proxy = xmlrpclib.ServerProxy("http://" + master_str)
                     break
             except Exception as e:
-                print 'wzd',e
+                print 'cannot connect to front server'
+                print 'change to another front server'
                 time.sleep(2)
+                global current_index
+                current_index = self.select_proxy()
+                while current_index == -1:
+                    print 'no available front servers'
+                    print 'wait...'
+                    time.sleep(2)
+                    current_index = self.select_proxy()
+
+                print 'connect to ', URL_list[current_index]
+                proxy = s_list[current_index]
+
+    def select_proxy(self):
+        count = -1
+        for s in s_list:
+            count += 1
+            try:
+                s.check_alive()
+                return count
+            except:
+                pass
+        return -1
 
     def start(self):
         """ Connect with the master frontserver"""
@@ -84,6 +106,7 @@ class Bard():
             time.sleep(cf.update_show_interval)
             print score
             event_end_prob = cf.event_end_prob
+            connect_flag = 'YES'
             if random.random() >= 1 - event_end_prob: # event end
                 event_end_prob += cf.event_end_prob_incr_per_interval
                 should_end = True
@@ -111,7 +134,7 @@ class Bard():
                 else :
                     should_end = False
                     if connect_flag == 'NO':
-                        sys.sleep(2)
+                        time.sleep(2)
                         self.connect_to_master()
                     continue
             if random.random() >= 1 - cf.score_update_prob: # update score
@@ -122,7 +145,7 @@ class Bard():
                     score[sport] = (score[sport][0], score[sport][1]+1, should_end)
                     connect_flag = self.set_score(sport, score[sport])
             if connect_flag == 'NO':
-                sys.sleep(2)
+                time.sleep(2)
                 self.connect_to_master()
         print score
         return
@@ -133,7 +156,7 @@ class Bard():
                 connect_flag = proxy.incrementMedalTally(team, medal)
                 return connect_flag
             except:
-                sys.sleep(1)
+                time.sleep(1)
                 self.connect_to_master()
     def set_score(self, event, score):
         while True:
@@ -141,7 +164,7 @@ class Bard():
                 connect_flag = proxy.setScore(event, score)
                 return connect_flag
             except:
-                sys.sleep(1)
+                time.sleep(1)
                 self.connect_to_master()
 
 def get_medal_type():
@@ -174,8 +197,22 @@ def get_team():
         return "Romans"
 
 lock = threading.Lock()
-URL = "http://" + cf.server_ip + ":" + cf.server_port
-print URL
-proxy = xmlrpclib.ServerProxy(URL)
+remote_addresses = (cf.remote_server_ips, cf.remote_server_ports)
+assigned_server_index = cf.assigned_server_index
+current_index = assigned_server_index
+
+URL_list = []
+s_list = []
+
+remote_servers_num = len(remote_addresses[0])
+
+for i in range(remote_servers_num):
+    URL = "http://" + remote_addresses[0][i] + ":" + str(remote_addresses[1][i]);
+    URL_list.append(remote_addresses[0][i]+':'+str(remote_addresses[1][i]))
+    s_list.append(xmlrpclib.ServerProxy(URL))
+
+print URL_list[current_index]
+proxy = s_list[current_index]
+
 score_thread = Bard()
 score_thread.start()

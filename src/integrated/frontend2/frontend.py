@@ -55,6 +55,8 @@ global client_object
 global cache_mode # the system-wide cache_mode is retrieved from the backend server at the start of the frontend server
 global client_dict
 global client_dict_lock
+client_dict = {}
+client_dict_lock = threading.Lock()
 
 global client_old_dict # not used in current implementation
 global client_old_dict_lock # not used in current implementation
@@ -128,7 +130,7 @@ class RPCObject:
         self.time_port = tcf.cluster_info[str(tcf.process_id)][1]
         self.time_proxy = xmlrpclib.ServerProxy("http://" + self.time_ip + ":" + str(self.time_port))
 
-    def get_medal_tally(self, client_id, client_addr, team_name = 'Gauls'):
+    def get_medal_tally(self, client_id, team_name = 'Gauls'):
         global pid
         global c_time
 
@@ -136,18 +138,19 @@ class RPCObject:
         if result == None:
             result = backend_s.getMedalTally(team_name)
             self.__update_cache('Medal-'+team_name, result)
-        return result
+        return (myipAddress+':'+str(myport), result)
 
-    def get_score(self, client_id, client_addr, event_type = 'Curling' ):
+    def get_score(self, client_id, event_type = 'Curling' ):
         result = self.__find_in_cache('Score-'+event_type)
         if result == None:
             result = backend_s.getScore(event_type)
             self.__update_cache('Score-'+event_type, result)
         result_return = result[:]
         result_return[-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(result_return[-1]))
-        return result_return
+        return (myipAddress+':'+str(myport), result_return)
 
     def areYouMaster(self, dummy):
+        """called by bard for getting the addr of master process"""
         master_flag = ts.getIsMasterFlag()
         if master_flag == True:
             return 'OK'
@@ -161,15 +164,25 @@ class RPCObject:
             return result
     
     def registerClient(self, claimed_fe_address, client_address):
-        if claimed_fe_address != myipAddress + ':' + str(myport):
-            client_dict_lock.acquire()
-            if claimed_fe_address not in client_dict:
-                client_dict[claimed_fe_address] = set()
-            client_dict[claimed_fe_address].add(client_address)
-            client_dict_lock.release()
+        """client distributed to here because of the failure of its assigned frontend server is added to client_dict"""
+        global client_dict
+        print 'registerClient due to fail of assigned front server: ', claimed_fe_address, ' ', client_address
+        print 'my address is: ', myipAddress + ':' + str(myport)
+        try:
+            if claimed_fe_address != myipAddress + ':' + str(myport):
+                client_dict_lock.acquire()
+                if claimed_fe_address not in client_dict:
+                    client_dict[claimed_fe_address] = set()
+                client_dict[claimed_fe_address].add(client_address)
+                client_dict_lock.release()
+        except Exception as e:
+            print e, ' at registerClient'
         return True
 
     def deregisterClient(self, claimed_fe_address, client_address):
+        global client_dict
+        """deregister when the client process end"""
+        print 'deregisterClient due to client exit: ', claimed_fe_address, ' ', client_address
         if claimed_fe_address != myipAddress + ':' + str(myport):
             client_dict_lock.acquire()
             if claimed_fe_address in client_dict and client_address in client_dict[claimed_fe_address]:
@@ -254,7 +267,8 @@ class RPCObject:
         return backend_s.setScore(eventType, score)
 
     def __find_in_cache(self, cache_key):
-        if cache_mode == -1:
+        """private function for locating cache_key, None if not found"""
+        if cache_mode == -1: # do nothing if no cache strategy is used
             return None
         cache_dict_lock.acquire()
         cache_dict_tmp = cache_dict
@@ -265,6 +279,7 @@ class RPCObject:
             return None
 
     def __update_cache(self, cache_key, value):
+        """private function for updating value related for a given cache_key"""
         if cache_mode == -1:
             return
         cache_dict_lock.acquire()
@@ -279,6 +294,7 @@ class RPCObject:
         return backend_s.claim_client((client_uniq_id, True,))
 
 def pull_update_cache():
+    """(local)pull cache functioning only in pull mode"""
     if cache_mode != 0:
         return False
     cache_dict_lock.acquire()
@@ -292,6 +308,7 @@ def pull_update_cache():
     return True
 
 def record_request(request, l_time):
+    """(RPC)lamport clock for implementing totally ordering: receive and record broadcast request"""
     global heap_lock
     global MAX_HEAP_SIZE
     global heap_size
@@ -316,6 +333,7 @@ def record_request(request, l_time):
     return flag
 
 def send_ack(l_time, pro_id):
+    """(RPC)lamport clock for implementing totally ordering: send out ACK for received broadcast request"""
     global ack_num_dict
     global aux_ack_dict
     global dict_lock
@@ -334,18 +352,24 @@ def send_ack(l_time, pro_id):
     return True
 
 def check_alive():
+    """(RPC)trivial function: check whether the frontend server is alive """
     return True
 
 class PullThread(threading.Thread):
+    """cache pull mode background thread"""
     def __init__(self):
         threading.Thread.__init__(self)
     def run(self):
         while True:
             time.sleep(pull_period)
-            pull_update_cache()
+            try:
+                pull_update_cache()
+            except:
+                pass
             continue
 
 class HeapThread(threading.Thread):
+    """background thread for implementing totally ordering"""
     def __init__(self):
         threading.Thread.__init__(self)
     def run(self):
@@ -456,9 +480,9 @@ def invalidate_cache(cache_key):
 def invalidate_whole_cache():
     if cache_mode == -1:
         return False
+    print 'whole cache invalidated'
     cache_dict_lock.acquire()
-    for cache_key in cache_dict:
-        del cache_dict[cache_key]
+    cache_dict.clear()
     cache_dict_lock.release()
     return True
 
@@ -482,23 +506,41 @@ class ServerThread(threading.Thread):
 class FeScanThread(threading.Thread):
     """Background thread: checking whether a fe is recovered from disconnected, and in that case, notify the corresponding clients"""
     def __init__(self, scan_interval):
+        threading.Thread.__init__(self)
         self.scan_interval = scan_interval
     def run(self):
         global pre_fe_status
+        global client_dict
+
         while True:
-            sys.sleep(self.scan_interval)
+            time.sleep(self.scan_interval)
             for i in range(len(s_list)):
                 try:
                     s_list[i].check_alive()
                     if not pre_fe_status[i]:
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'reconnect'
+                        print URL_list[i]
                         client_dict_lock.acquire()
+                        print client_dict
                         if URL_list[i] in client_dict:
-                            for client in client_dict[URL_list[i]]:
-                                proxy_tmp = xmlrpclib.ServerProxy('http://'+client)
+                            print 'it is normal'
+                            print list(client_dict[URL_list[i]])
+                            for client in list(client_dict[URL_list[i]]):
+                                print client
                                 try:
+                                    x = 'abc'
+                                    proxy_tmp = xmlrpclib.ServerProxy('http://'+client)
                                     proxy_tmp.change_back_proxy()
-                                except:
-                                    pass
+                                except Exception as e:
+                                    print e
+                                    print 'xxxxxxxxxxxxxxxxxxxxx'
+                                    continue
                         client_dict_lock.release()
 
                     pre_fe_status[i] = True

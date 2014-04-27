@@ -55,6 +55,8 @@ global client_object
 global cache_mode # the system-wide cache_mode is retrieved from the backend server at the start of the frontend server
 global client_dict
 global client_dict_lock
+client_dict = {}
+client_dict_lock = threading.Lock()
 
 global client_old_dict # not used in current implementation
 global client_old_dict_lock # not used in current implementation
@@ -136,7 +138,7 @@ class RPCObject:
         if result == None:
             result = backend_s.getMedalTally(team_name)
             self.__update_cache('Medal-'+team_name, result)
-        return result
+        return (myipAddress+':'+str(myport), result)
 
     def get_score(self, client_id, event_type = 'Curling' ):
         result = self.__find_in_cache('Score-'+event_type)
@@ -145,7 +147,7 @@ class RPCObject:
             self.__update_cache('Score-'+event_type, result)
         result_return = result[:]
         result_return[-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(result_return[-1]))
-        return result_return
+        return (myipAddress+':'+str(myport), result_return)
 
     def areYouMaster(self, dummy):
         """called by bard for getting the addr of master process"""
@@ -163,17 +165,22 @@ class RPCObject:
     
     def registerClient(self, claimed_fe_address, client_address):
         """client distributed to here because of the failure of its assigned frontend server is added to client_dict"""
+        global client_dict
         print 'registerClient due to fail of assigned front server: ', claimed_fe_address, ' ', client_address
         print 'my address is: ', myipAddress + ':' + str(myport)
-        if claimed_fe_address != myipAddress + ':' + str(myport):
-            client_dict_lock.acquire()
-            if claimed_fe_address not in client_dict:
-                client_dict[claimed_fe_address] = set()
-            client_dict[claimed_fe_address].add(client_address)
-            client_dict_lock.release()
+        try:
+            if claimed_fe_address != myipAddress + ':' + str(myport):
+                client_dict_lock.acquire()
+                if claimed_fe_address not in client_dict:
+                    client_dict[claimed_fe_address] = set()
+                client_dict[claimed_fe_address].add(client_address)
+                client_dict_lock.release()
+        except Exception as e:
+            print e, ' at registerClient'
         return True
 
     def deregisterClient(self, claimed_fe_address, client_address):
+        global client_dict
         """deregister when the client process end"""
         print 'deregisterClient due to client exit: ', claimed_fe_address, ' ', client_address
         if claimed_fe_address != myipAddress + ':' + str(myport):
@@ -355,7 +362,10 @@ class PullThread(threading.Thread):
     def run(self):
         while True:
             time.sleep(pull_period)
-            pull_update_cache()
+            try:
+                pull_update_cache()
+            except:
+                pass
             continue
 
 class HeapThread(threading.Thread):
@@ -459,6 +469,7 @@ class HeapThread(threading.Thread):
             print 'heap thread'
 
 def invalidate_cache(cache_key):
+    """each time an update happened on master front server by the bard, the related cache item is invalidated"""
     if cache_mode == -1:
         return False
     cache_dict_lock.acquire()
@@ -468,12 +479,12 @@ def invalidate_cache(cache_key):
     return True
 
 def invalidate_whole_cache():
+    """each time a master is re-elected, the whole cache is invalidated"""
     if cache_mode == -1:
         return False
     print 'whole cache invalidated'
     cache_dict_lock.acquire()
-    for cache_key in cache_dict:
-        del cache_dict[cache_key]
+    cache_dict.clear()
     cache_dict_lock.release()
     return True
 
@@ -497,23 +508,41 @@ class ServerThread(threading.Thread):
 class FeScanThread(threading.Thread):
     """Background thread: checking whether a fe is recovered from disconnected, and in that case, notify the corresponding clients"""
     def __init__(self, scan_interval):
+        threading.Thread.__init__(self)
         self.scan_interval = scan_interval
     def run(self):
         global pre_fe_status
+        global client_dict
+
         while True:
-            sys.sleep(self.scan_interval)
+            time.sleep(self.scan_interval)
             for i in range(len(s_list)):
                 try:
                     s_list[i].check_alive()
                     if not pre_fe_status[i]:
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'ooooooooooooooooooooo'
+                        print 'reconnect'
+                        print URL_list[i]
                         client_dict_lock.acquire()
+                        print client_dict
                         if URL_list[i] in client_dict:
-                            for client in client_dict[URL_list[i]]:
-                                proxy_tmp = xmlrpclib.ServerProxy('http://'+client)
+                            print 'it is normal'
+                            print list(client_dict[URL_list[i]])
+                            for client in list(client_dict[URL_list[i]]):
+                                print client
                                 try:
+                                    x = 'abc'
+                                    proxy_tmp = xmlrpclib.ServerProxy('http://'+client)
                                     proxy_tmp.change_back_proxy()
-                                except:
-                                    pass
+                                except Exception as e:
+                                    print e
+                                    print 'xxxxxxxxxxxxxxxxxxxxx'
+                                    continue
                         client_dict_lock.release()
 
                     pre_fe_status[i] = True

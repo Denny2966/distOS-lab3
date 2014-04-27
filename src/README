@@ -1,9 +1,15 @@
 **Part 1:
-Cache mode is assigned by the backend server. You can configure it in server_config.py under part1/backend/. Specifically, server_mode = -1 means no cache is used.
-You must run all servers (including backend and the two frontends) before starting bard and client process, since I have not implemented fault tolerance yet. Specifically, you have to wait about 5 seconds after the two frontends server start, to make sure the whole system runs ok. I will fix this in the next version.
+    Cache mode is assigned by the backend server. You can configure it in server_config.py under part1/backend/. Specifically, server_mode = -1 means no cache is used.
+    You must run all servers (including backend and the two frontends) before starting bard and client process, since I have not implemented fault tolerance yet. Specifically, you have to wait about 5 seconds after the two frontends server start, to make sure the whole system runs ok. I will fix this in the next version.
 
-**Part 2:
-Under work
+**Part 2 (integrated):
+    Whenever a front server fails, related clients would try and find another front server. The new server would register these clients. Later, if it finds the assigned server of those clients recover (This is a background thread periodically checking the connection of fellow front servers), it would notify and shift the clients to their original server (This notification is a push operation).
+
+    For bard process, it is almost always guaranteed to the master, no matter the fail front server itself is master or not, and no matter the failed server recovers or not. Each time a re-election of master---due to fail/recover of a server---happens, the whole cache of all front servers would be invalidated for making sure the correctness.
+
+    It is suggested to first start the back server and all front servers, and then start the bard process and clients after a few seconds (like 3 seconds). For test the correctness of fail tolerance mechanism, you can kill front server 2, observe the change of associated front server of client 3 and 4, and then restart front server 2, observe the change again. I pre-assign clients 1, and 2 to front server 1, and clients 3, and 4 to front server 2; you can modify this in the configuration file of clients.
+
+    In fact, "integrated" is a integration of both part 1 and part 2.
 
 Armand:
     Could you have test the part1 according to the lab requirement and start on the document? If you meet any problem, please contact me. I will start on Part 2.

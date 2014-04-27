@@ -27,9 +27,6 @@ global current_index
 global client_addr
 global pid
 global proxy
-global disable_ind_set
-global ind_set
-global ind_set_lock
 global proxy_lock
 global s_list
 global URL_list
@@ -37,7 +34,6 @@ global URL_list
 assigned_server_index = cf.assigned_server_index
 client_addr = cf.client_addr
 pid = cf.process_id
-ind_set_lock = threading.Lock()
 proxy_lock = threading.Lock()
 
 tally_board = [[0 for x in xrange(2)] for x in xrange(3)]
@@ -89,7 +85,7 @@ class ClientObject:
 
     def get_medal_tally(self, s, team_name = 'Gauls'):
         global pid
-        result = s.get_medal_tally(pid, team_name)
+        fe_addr, result = s.get_medal_tally(pid, team_name)
 
         team_name_index = get_team_name_index(team_name)
         if team_name_index != -1 :
@@ -101,12 +97,12 @@ class ClientObject:
                 t_file_data[team_name_index] = str(team_name) + ': ' + str(result) + '\n'
                 t_file.seek(0)
                 t_file.writelines(t_file_data)
-        return result
+        return (fe_addr, result)
 
     def get_score(self, s, event_type = 'Curling'):
         global pid
         print pid
-        result = s.get_score(pid, event_type)
+        fe_addr, result = s.get_score(pid, event_type)
 
         event_type_index = get_event_type_index(event_type)
         if event_type_index != -1:
@@ -118,13 +114,13 @@ class ClientObject:
                 s_file_data[event_type_index] = str(event_type) + ': ' + str(result)  + '\n'
                 s_file.seek(0)
                 s_file.writelines(s_file_data)
-        return result
+        return (fe_addr, result)
 
     def start(self, poisson_lambda, simu_len, get_score_pb):
-        global ind_set
-        global disable_ind_set
         global s_list
+        global URL_list
         global current_index
+        global proxy
         
         t = np.random.rand(poisson_lambda*simu_len) * simu_len
         t.sort()
@@ -132,21 +128,17 @@ class ClientObject:
 
         s_list = []
         URL_list = []
-        remote_servers_num = len(remote_addresses[0])
 
-        ind_set = set(range(remote_servers_num))
-        ind_set_lock.acquire()
-        disable_ind_set = set(range(remote_servers_num))
-        ind_set_lock.release()
+        remote_servers_num = len(remote_addresses[0])
 
         for i in range(remote_servers_num):
             URL = "http://" + remote_addresses[0][i] + ":" + str(remote_addresses[1][i]);
-            URL_list.append(URL)
+            URL_list.append(remote_addresses[0][i]+':'+str(remote_addresses[1][i]))
             s_list.append(xmlrpclib.ServerProxy(URL))
 
         proxy_lock.acquire()
         current_index = assigned_server_index
-        proxy = xmlrpclib.ServerProxy('http://'+remote_addresses[0][current_index]+':'+str(remote_addresses[1][current_index]))
+        proxy = s_list[current_index]
         proxy_lock.release()
 
         count = 0
@@ -173,18 +165,19 @@ class ClientObject:
                 info = sys.exc_info()
                 print "Unexpected exception, cannot connect to the server:", info[0],",",info[1]
                 
-                break_flag = self.select_proxy()
+                current_index = self.select_proxy()
+                break_flag = current_index
 
-                ind_set_lock.acquire()
-                current_index = break_flag
-                ind_set_lock.release()
-
-                proxy = xmlrpclib.ServerProxy('http://'+remote_addresses[0][break_flag]+':'+str(remote_addresses[1][break_flag]))
-                if break_flag != assigned_server_index:
-                    proxy.registerClient(URL_list[assigned_server_index], client_addr[0]+':'+str(client_addr[1]))
+                if current_index != -1:
+                    proxy = s_list[current_index]
+                    if current_index != assigned_server_index:
+                        print 'client: register client on a different front server'
+                        proxy.registerClient(URL_list[assigned_server_index], client_addr[0]+':'+str(client_addr[1]))
 
             proxy_lock.release()
+
             if break_flag == -1:
+                print 'no frontend servers available, exit (you can also choose to reconnect to the frontend servers)'
                 break
         for s in s_list:
             try:
@@ -207,25 +200,32 @@ class RPCObject():
     def change_back_proxy(self):
         global current_index
         global proxy
-
-        ind_set_lock.acquire()
-        current_index =  assigned_server_index
-        ind_set_lock.release()
+        print 'change_back_proxy is called'
 
         proxy_lock.acquire()
-        proxy = xmlrpclib.ServerProxy('http://'+remote_addresses[0][assigned_server_index]+':'+str(remote_addresses[1][assigned_server_index]))
+        current_index =  assigned_server_index
+        proxy = s_list[current_index]
+        print 'ooooooooooooooooooo'
+        print 'ooooooooooooooooooo'
+        print 'ooooooooooooooooooo'
+        print 'ooooooooooooooooooo'
+        print 'ooooooooooooooooooo'
+        print 'ooooooooooooooooooo'
+        print 'ooooooooooooooooooo'
+        print 'I am back to assigned server: ', URL_list[current_index]
         proxy_lock.release()
 
         return True
 
 class ServerThread(threading.Thread):
     """a RPC server listening to push request from the server of the whole system"""
-    def __init__(self, port):
+    def __init__(self):
         threading.Thread.__init__(self)
-        self.port = port
 
         self.localServer = AsyncXMLRPCServer(('', cf.client_addr[1]), SimpleXMLRPCRequestHandler) #SimpleXMLRPCServer(('', port))
         self.localServer.register_instance(RPCObject())
+    def run(self):
+        self.localServer.serve_forever()
 
 if __name__ == "__main__":
     remote_ips = cf.remote_server_ips
@@ -241,7 +241,7 @@ if __name__ == "__main__":
     get_score_pb = cf.get_score_pb
 
     client = ClientObject(remote_ips, remote_ports)
-    server = ServerThread(myport)
+    server = ServerThread()
     server.daemon = True; # allow the thread exit right after the main thread exits by keyboard interruption.
     server.start() # The server is now running
 
