@@ -39,6 +39,10 @@ proxy_lock = threading.Lock()
 tally_board = [[0 for x in xrange(2)] for x in xrange(3)]
 score_board = [[0 for x in xrange(4)] for x in xrange(3)]
 
+for x in xrange(3):
+    score_board[x][-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(0))
+
+
 team_name_list = ['Gauls', 'Romans']
 medal_type_list = ['Gold', 'Silver', 'Bronze']
 event_type_list = ['Curling', 'Skating', 'Skiing']
@@ -50,8 +54,29 @@ event_type_dict = {"Curling":0, "Skating":1, "Skiing":2}
 t_file = None
 s_file = None
 
-t_file_name = './log/tally_board.out'
-s_file_name = './log/score_board.out'
+t_file_name = './log/client_tally_board.out'
+s_file_name = './log/client_score_board.out'
+
+try :
+    # initialize output files
+    s_file = open(s_file_name, 'w')
+    s_file.writelines([var[0] + ': ' + str(list(score_board[var[1]]))+'\n' for var in sorted(event_type_dict.iteritems(), key=lambda d:d[1], reverse=False)]) 
+    s_file.close()
+
+    t_file = open(t_file_name, 'w')
+
+    tally_board_transpose = np.transpose(tally_board)
+
+    t_file.writelines([var[0] + ': ' + str(list(tally_board_transpose[var[1]]))+'\n' for var in sorted(team_name_dict.iteritems(), key=lambda d:d[1], reverse = False)]) 
+    t_file.close()
+    # end of initialize output files
+
+except :
+    info = sys.exc_info()
+    print "Unexpected exception, cannot connect to the server:", info[0],",",info[1]
+    sys.exit(1)
+else :
+    pass
 
 #global sb_lock
 #global output_lock
@@ -104,6 +129,8 @@ class ClientObject:
         print pid
         fe_addr, result = s.get_score(pid, event_type)
 
+        result[-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(result[-1]))
+
         event_type_index = get_event_type_index(event_type)
         if event_type_index != -1:
             score_board[event_type_index] = result
@@ -151,6 +178,7 @@ class ClientObject:
             try:
                 if np.random.rand(1) < get_score_pb:
                     print 'event'
+                    print get_rand_value(event_type_list)
                     proxy_lock.acquire()
                     result = self.get_score(proxy, get_rand_value(event_type_list)) # result is a two-elements tuple (associated front server, score result)
                     print '+++++', result
@@ -159,8 +187,6 @@ class ClientObject:
                     proxy_lock.acquire()
                     result = self.get_medal_tally(proxy, get_rand_value(team_name_list))
                     print '+++++', result
-#            except socket.error, (value,message):
-#                print "Could not open socket to the server: " + message
             except :
                 info = sys.exc_info()
                 print "Unexpected exception, cannot connect to the server:", info[0],",",info[1]

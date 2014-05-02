@@ -146,7 +146,6 @@ class RPCObject:
             result = backend_s.getScore(event_type)
             self.__update_cache('Score-'+event_type, result)
         result_return = result[:]
-        result_return[-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(result_return[-1]))
         return (myipAddress+':'+str(myport), result_return)
 
     def areYouMaster(self, dummy):
@@ -469,6 +468,7 @@ class HeapThread(threading.Thread):
             print 'heap thread'
 
 def invalidate_cache(cache_key):
+    """each time an update happened on master front server by the bard, the related cache item is invalidated"""
     if cache_mode == -1:
         return False
     cache_dict_lock.acquire()
@@ -478,6 +478,7 @@ def invalidate_cache(cache_key):
     return True
 
 def invalidate_whole_cache():
+    """each time a master is re-elected, the whole cache is invalidated"""
     if cache_mode == -1:
         return False
     print 'whole cache invalidated'

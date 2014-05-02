@@ -178,6 +178,7 @@ class RequestObject:
 
     def setScore(self, eventType, score): # score is a list (score_of_Gauls, score_of_Romans, flag_whether_the_event_is_over)
         """set score"""
+        print score
         # lock
         self.pre_write(self.sb_lock)
 
@@ -315,8 +316,8 @@ if __name__ == "__main__":
     t_file = None
     s_file = None
 
-    t_file_name = './log/tally_board.out'
-    s_file_name = './log/score_board.out'
+    t_file_name = './log/bs_tally_board.out'
+    s_file_name = './log/bs_score_board.out'
 
     tally_board = [[0 for x in xrange(2)] for x in xrange(3)]
     score_board = [[0 for x in xrange(4)] for x in xrange(3)] # last element for each x is the timestamp

@@ -146,7 +146,6 @@ class RPCObject:
             result = backend_s.getScore(event_type)
             self.__update_cache('Score-'+event_type, result)
         result_return = result[:]
-        result_return[-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(result_return[-1]))
         return (myipAddress+':'+str(myport), result_return)
 
     def areYouMaster(self, dummy):
