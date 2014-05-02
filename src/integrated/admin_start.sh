@@ -15,7 +15,7 @@ if [ "$binary_name" == "frontend" ]; then
     ./frontend2/frontend.py > log/frontend2 2>&1 &
 fi
 
-if [ "$binary_name" == "frontend" ]; then
+if [ "$binary_name" == "backend" ]; then
     ./backend/backend.py > log/backend 2>&1 &
 fi
 
