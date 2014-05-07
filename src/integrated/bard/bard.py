@@ -46,7 +46,7 @@ class Bard():
                     print 'master has not been elected yet, sleep ', sleep_time, ' seconds'
                     time.sleep(sleep_time)
                 else:
-                    print 'wzd', 'http://' + master_str
+                    print 'master address (which is the address of final assigned frontend server) is ', 'http://' + master_str
                     proxy = xmlrpclib.ServerProxy("http://" + master_str)
                     break
             except Exception as e:
@@ -211,7 +211,7 @@ for i in range(remote_servers_num):
     URL_list.append(remote_addresses[0][i]+':'+str(remote_addresses[1][i]))
     s_list.append(xmlrpclib.ServerProxy(URL))
 
-print URL_list[current_index]
+print "the address of initially assigned frontend server is http://", URL_list[current_index]
 proxy = s_list[current_index]
 
 score_thread = Bard()

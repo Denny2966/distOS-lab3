@@ -126,7 +126,6 @@ class ClientObject:
 
     def get_score(self, s, event_type = 'Curling'):
         global pid
-        print pid
         fe_addr, result = s.get_score(pid, event_type)
 
         result[-1] = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(result[-1]))
@@ -177,16 +176,25 @@ class ClientObject:
 
             try:
                 if np.random.rand(1) < get_score_pb:
-                    print 'event'
-                    print get_rand_value(event_type_list)
+                    r_tmp = get_rand_value(event_type_list)
+                    print ''
+                    print '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+                    print 'Get the Score for the Event: ', r_tmp
                     proxy_lock.acquire()
-                    result = self.get_score(proxy, get_rand_value(event_type_list)) # result is a two-elements tuple (associated front server, score result)
-                    print '+++++', result
+                    result = self.get_score(proxy, r_tmp) # result is a two-elements tuple (associated front server, score result)
+                    print 'The frontend server that serves the request is ' ,result[0]
+                    print 'The score list is ' ,result[1], ' ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])'
+                    print '-------------------------------------------------------------------'
                 else:
-                    print 'medal'
+                    r_tmp = get_rand_value(team_name_list)
+                    print ''
+                    print '*******************************************************************'
+                    print 'Get the MedalTally for the Team: ', r_tmp
                     proxy_lock.acquire()
-                    result = self.get_medal_tally(proxy, get_rand_value(team_name_list))
-                    print '+++++', result
+                    result = self.get_medal_tally(proxy, r_tmp)
+                    print 'The frontend server that serves the request is ' ,result[0]
+                    print 'The medal list is ' ,result[1], ' ([Gold, Silver, Bronze])'
+                    print '###################################################################'
             except :
                 info = sys.exc_info()
                 print "Unexpected exception, cannot connect to the server:", info[0],",",info[1]
@@ -231,13 +239,6 @@ class RPCObject():
         proxy_lock.acquire()
         current_index =  assigned_server_index
         proxy = s_list[current_index]
-        print 'ooooooooooooooooooo'
-        print 'ooooooooooooooooooo'
-        print 'ooooooooooooooooooo'
-        print 'ooooooooooooooooooo'
-        print 'ooooooooooooooooooo'
-        print 'ooooooooooooooooooo'
-        print 'ooooooooooooooooooo'
         print 'I am back to assigned server: ', URL_list[current_index]
         proxy_lock.release()
 

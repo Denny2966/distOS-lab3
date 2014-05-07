@@ -149,7 +149,7 @@ class RPCObject:
         return (myipAddress+':'+str(myport), result_return)
 
     def areYouMaster(self, dummy):
-        """called by bard for getting the addr of master process"""
+        """(lab3 funcs) called by bard for getting the addr of master process"""
         master_flag = ts.getIsMasterFlag()
         if master_flag == True:
             return 'OK'
@@ -163,7 +163,7 @@ class RPCObject:
             return result
     
     def registerClient(self, claimed_fe_address, client_address):
-        """client distributed to here because of the failure of its assigned frontend server is added to client_dict"""
+        """(lab3 funcs) client re-distributed to here, because of the failure of its assigned frontend server, is added to client_dict"""
         global client_dict
         print 'registerClient due to fail of assigned front server: ', claimed_fe_address, ' ', client_address
         print 'my address is: ', myipAddress + ':' + str(myport)
@@ -180,7 +180,7 @@ class RPCObject:
 
     def deregisterClient(self, claimed_fe_address, client_address):
         global client_dict
-        """deregister when the client process end"""
+        """(lab3 funcs) deregister when the client process end"""
         print 'deregisterClient due to client exit: ', claimed_fe_address, ' ', client_address
         if claimed_fe_address != myipAddress + ':' + str(myport):
             client_dict_lock.acquire()
@@ -197,12 +197,6 @@ class RPCObject:
             result = backend_s.incrementMedalTally(teamName, medalType)
             return 'NO'
         if ts.getIsMasterFlag() and cache_mode == 1:
-            print 'increase medal tally invalidation'
-            print 'increase medal tally invalidation'
-            print 'increase medal tally invalidation'
-            print 'increase medal tally invalidation'
-            print 'increase medal tally invalidation'
-            print 'increase medal tally invalidation'
             print 'increase medal tally invalidation'
             for s in s_list:
                 try:
@@ -227,26 +221,15 @@ class RPCObject:
         #readable_time = time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(epoch_time))
         score += [epoch_time]#[readable_time]
 
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
-        print '++++++++++++++++'
+        print '****************'
+        print '****************'
+        print '****************'
+        print 'set score: with time of epoch time format'
+        print '****************'
+        print '****************'
+        print '****************'
         print score
-        print '----------------'
-        print '----------------'
-        print '----------------'
-        print '----------------'
-        print '----------------'
-        print '----------------'
         if ts.getIsMasterFlag() and cache_mode == 1:
-            print '^^^^^^^^^^^^^^^'
-            print '^^^^^^^^^^^^^^^'
-            print '^^^^^^^^^^^^^^^'
-            print '^^^^^^^^^^^^^^^'
-            print '^^^^^^^^^^^^^^^'
-            print '^^^^^^^^^^^^^^^'
             for s in s_list:
                 try:
                     s.invalidate_cache('Score-'+eventType)
@@ -257,16 +240,10 @@ class RPCObject:
                         s.invalidate_cache('Score-'+eventType)
                     except:
                         pass
-        print '****************'
-        print '****************'
-        print '****************'
-        print '****************'
-        print '****************'
-        print '****************'
         return backend_s.setScore(eventType, score)
 
     def __find_in_cache(self, cache_key):
-        """private function for locating cache_key, None if not found"""
+        """(lab3 funcs private) private function for locating cache_key, None if not found"""
         if cache_mode == -1: # do nothing if no cache strategy is used
             return None
         cache_dict_lock.acquire()
@@ -278,7 +255,7 @@ class RPCObject:
             return None
 
     def __update_cache(self, cache_key, value):
-        """private function for updating value related for a given cache_key"""
+        """(lab3 funcs private) private function for updating value related for a given cache_key"""
         if cache_mode == -1:
             return
         cache_dict_lock.acquire()
@@ -293,7 +270,7 @@ class RPCObject:
         return backend_s.claim_client((client_uniq_id, True,))
 
 def pull_update_cache():
-    """(local)pull cache functioning only in pull mode"""
+    """(lab3 funcs module private) (local)pull cache functioning only in pull mode"""
     if cache_mode != 0:
         return False
     cache_dict_lock.acquire()
@@ -351,7 +328,7 @@ def send_ack(l_time, pro_id):
     return True
 
 def check_alive():
-    """(RPC)trivial function: check whether the frontend server is alive """
+    """(RPC) trivial function: check whether the frontend server is alive """
     return True
 
 class PullThread(threading.Thread):
@@ -478,7 +455,7 @@ def invalidate_cache(cache_key):
     return True
 
 def invalidate_whole_cache():
-    """each time a master is re-elected, the whole cache is invalidated"""
+    """(lab3 funcs module private) each time a master is re-elected, the whole cache is invalidated"""
     if cache_mode == -1:
         return False
     print 'whole cache invalidated'
@@ -505,7 +482,7 @@ class ServerThread(threading.Thread):
         self.localServer.serve_forever()
 
 class FeScanThread(threading.Thread):
-    """Background thread: checking whether a fe is recovered from disconnected, and in that case, notify the corresponding clients"""
+    """(lab3 thread background) Background thread: checking whether a fe (short for frontend server) is recovered from disconnected, and in that case, notify the corresponding clients"""
     def __init__(self, scan_interval):
         threading.Thread.__init__(self)
         self.scan_interval = scan_interval
@@ -519,28 +496,20 @@ class FeScanThread(threading.Thread):
                 try:
                     s_list[i].check_alive()
                     if not pre_fe_status[i]:
-                        print 'ooooooooooooooooooooo'
-                        print 'ooooooooooooooooooooo'
-                        print 'ooooooooooooooooooooo'
-                        print 'ooooooooooooooooooooo'
-                        print 'ooooooooooooooooooooo'
-                        print 'ooooooooooooooooooooo'
-                        print 'reconnect'
+                        print 'reconnect clients to their (revived) original frontend server: '
                         print URL_list[i]
                         client_dict_lock.acquire()
                         print client_dict
                         if URL_list[i] in client_dict:
-                            print 'it is normal'
+                            print 'related clients are:'
                             print list(client_dict[URL_list[i]])
                             for client in list(client_dict[URL_list[i]]):
-                                print client
                                 try:
                                     x = 'abc'
                                     proxy_tmp = xmlrpclib.ServerProxy('http://'+client)
                                     proxy_tmp.change_back_proxy()
                                 except Exception as e:
                                     print e
-                                    print 'xxxxxxxxxxxxxxxxxxxxx'
                                     continue
                         client_dict_lock.release()
 
@@ -558,13 +527,14 @@ if __name__ == "__main__":
         print e
         sys.exit(1)
 
+    # backend server ip and port
     remote_host_name = cf.server_ip
     remote_port = cf.server_port
 
         
     URL = "http://" + remote_host_name + ":" + str(remote_port)
     backend_s = xmlrpclib.ServerProxy(URL)
-    print 'URL:', URL
+    print 'Backend Server URL:', URL
 
     while True:
         try:
@@ -579,6 +549,7 @@ if __name__ == "__main__":
     server.daemon = True; # allow the thread exit right after the main thread exits by keyboard interruption.
     server.start() # The server is now running
 
+    # cluster of all frontend servers
     for i in cluster_info:
         all_processes.append((cluster_info[i][0], cluster_info[i][1], int(i)))
     process_num = len(all_processes)
@@ -594,7 +565,7 @@ if __name__ == "__main__":
         s_list.append(xmlrpclib.ServerProxy(URL))
 
     # set up time server
-    ts.SetupServer((myipAddress, myport), s_list) # it is just used for selection
+    ts.SetupServer((myipAddress, myport), s_list) # it is just used for master selection
 
     # it is supposed the two frontend servers should both start normally
     while True:
