@@ -1,0 +1,1402 @@
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [0, 0, 0, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:55 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+Unexpected exception, cannot connect to the server: <class 'socket.error'> , [Errno 61] Connection refused
+client: register client on a different front server
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8006
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 1, False, 'Wed, 07 May 2014 00:42:01 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8006
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 1, False, 'Wed, 07 May 2014 00:42:01 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 1, False, 'Wed, 07 May 2014 00:42:01 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8006
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skatin127.0.0.1 - - [07/May/2014 00:42:06] "POST /RPC2 HTTP/1.1" 200 -
+g
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8006
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+change_back_proxy is called
+I am back to assigned server:  127.0.0.1:8005
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:57 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:07 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:05 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:09 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 2, False, 'Wed, 07 May 2014 00:42:11 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+Unexpected exception, cannot connect to the server: <class 'socket.error'> , [Errno 61] Connection refused
+client: register client on a different front server
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006127.0.0.1 - - [07/May/2014 00:42:28] "POST /RPC2 HTTP/1.1" 200 -
+
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8006
+The score list is  [1, 0, False, 'Wed, 07 May 2014 00:41:59 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+change_back_proxy is called
+I am back to assigned server:  127.0.0.1:8005
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 2, False, 'Wed, 07 May 2014 00:42:24 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 3, False, 'Wed, 07 May 2014 00:42:30 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Gauls
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [4, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [4, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
+*******************************************************************
+Get the MedalTally for the Team:  Romans
+The frontend server that serves the request is  127.0.0.1:8005
+The medal list is  [0, 0, 0]  ([Gold, Silver, Bronze])
+###################################################################
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 0, False, 'Wed, 07 May 2014 00:42:28 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [4, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skating
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [4, 1, 'Wed, 31 Dec 1969 19:00:00 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Curling
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [3, 4, False, 'Wed, 07 May 2014 00:42:32 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Get the Score for the Event:  Skiing
+The frontend server that serves the request is  127.0.0.1:8005
+The score list is  [2, 1, False, 'Wed, 07 May 2014 00:42:40 +0000']  ([Gauls, Romans, EventEndFlag, LatestScoreUpdateTime])
+-------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./client.py", line 275, in <module>
+    client.start(poisson_lambda, simu_len, get_score_pb)
+  File "./client.py", line 175, in start
+    time.sleep(t_val)
+KeyboardInterrupt

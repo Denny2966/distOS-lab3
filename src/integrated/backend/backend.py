@@ -178,7 +178,7 @@ class RequestObject:
 
     def setScore(self, eventType, score): # score is a list (score_of_Gauls, score_of_Romans, flag_whether_the_event_is_over)
         """set score"""
-        print score
+        print 'Set Score for Event ', eventType, ': ', score
         # lock
         self.pre_write(self.sb_lock)
 

@@ -1,0 +1,52 @@
+the address of initially assigned frontend server is http:// 127.0.0.1:8005
+master address (which is the address of final assigned frontend server) is  http://127.0.0.1:8006
+Event generating time is used for estimating the event updating time in the frontend server.
+Event Generating Time is  Wed, 07 May 2014 00:41:53 +0000
+{'Skating': (0, 0, False), 'Curling': (0, 0, False), 'Skiing': (0, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:41:55 +0000
+{'Skating': (0, 0, False), 'Curling': (1, 0, False), 'Skiing': (0, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:41:57 +0000
+{'Skating': (1, 0, False), 'Curling': (1, 0, False), 'Skiing': (0, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:41:59 +0000
+{'Skating': (1, 0, False), 'Curling': (1, 0, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:01 +0000
+{'Skating': (1, 0, False), 'Curling': (1, 1, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:03 +0000
+{'Skating': (1, 0, False), 'Curling': (1, 1, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:05 +0000
+{'Skating': (1, 0, False), 'Curling': (2, 1, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:07 +0000
+{'Skating': (2, 0, False), 'Curling': (2, 1, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:09 +0000
+{'Skating': (2, 1, False), 'Curling': (2, 1, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:11 +0000
+{'Skating': (2, 1, False), 'Curling': (2, 2, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:13 +0000
+cannot connect to front server
+change to another front server
+connect to  127.0.0.1:8005
+master address (which is the address of final assigned frontend server) is  http://127.0.0.1:8006
+cannot connect to front server
+change to another front server
+connect to  127.0.0.1:8005
+master address (which is the address of final assigned frontend server) is  http://127.0.0.1:8006
+{'Skating': (3, 1, False), 'Curling': (2, 2, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:22 +0000
+{'Skating': (3, 1, False), 'Curling': (2, 2, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:24 +0000
+{'Skating': (3, 1, False), 'Curling': (3, 2, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:26 +0000
+{'Skating': (3, 1, False), 'Curling': (3, 2, False), 'Skiing': (1, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:28 +0000
+{'Skating': (3, 1, False), 'Curling': (3, 2, False), 'Skiing': (2, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:30 +0000
+{'Skating': (3, 1, False), 'Curling': (3, 3, False), 'Skiing': (2, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:32 +0000
+{'Skating': (3, 1, False), 'Curling': (3, 4, False), 'Skiing': (2, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:34 +0000
+cannot connect to front server
+change to another front server
+connect to  127.0.0.1:8005
+master address (which is the address of final assigned frontend server) is  http://127.0.0.1:8006
+{'Skating': (4, 1, False), 'Curling': (3, 4, False), 'Skiing': (2, 0, False)}
+Event Generating Time is  Wed, 07 May 2014 00:42:40 +0000

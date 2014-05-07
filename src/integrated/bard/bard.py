@@ -14,6 +14,7 @@ import xmlrpclib
 import bard_config as cf
 from sets import Set
 import sys
+import os
 import socket
 
 """
@@ -94,6 +95,8 @@ class Bard():
         Updates score to tell if event should end or if score should be updated
         Uses a remote procedure call to update the score
         """
+        print 'Event generating time is used for estimating the event updating time in the frontend server.'
+        print 'Event Generating Time is ', time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(os.times()[4]))
         score = {"Curling":(0,0,False),"Skating":(0,0,False), "Skiing":(0,0,False)}
         should_end = False
         
@@ -107,6 +110,7 @@ class Bard():
             print score
             event_end_prob = cf.event_end_prob
             connect_flag = 'YES'
+            print 'Event Generating Time is ', time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.localtime(os.times()[4]))
             if random.random() >= 1 - event_end_prob: # event end
                 event_end_prob += cf.event_end_prob_incr_per_interval
                 should_end = True
